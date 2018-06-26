@@ -623,5 +623,71 @@ const mines = [
 		alexandrite: "17",
 		platinum: "3",
 		uranium: "1"
+	},{
+		area: "97",
+		obsidian: "100",
+	},{
+		area: "98",
+		obsidian: "70",
+		diamond: "30",
+	},{
+		area: "99",
+		obsidian: "50",
+		diamond: "12",
+		iron: "11",
+		?: "26",
+	},{
+		area: "100",
+		obsidian: "45",
+		iron: "17",
+		diamond: "11",
+		?: "26",
+	},{
+		area: "101",
+		obsidian: "40",
+		iron: "23",
+		?: "37",
+	},{
+		area: "102",
+		obsidian: "35",
+		iron: "29",
+		?: "36",
+	},{
+		area: "103",
+		iron: "35",
+		obsidian: "30",
+		?: "35",
+	},{
+		area: "104",
+		iron: "40",
+		obsidian: "25",
+		coal: "11",
+		?: "22",
+	},{
+		area: "105",
+		iron: "46",
+		obsidian: "19",
+		coal: "13",
+		silver: "11",
+		?: "9",
+	},{
+		area: "106",
+		iron: "52",
+		coal: "15",
+		obsidian: "15",
+		silver: "12",
+		?: "5",
+	},{
+		area: "107",
+		iron: "58",
+		coal: "16",
+		silver: "14",
+		?: "11",
+	},{
+		area: "108",
+		iron: "64",
+		coal: "18",
+		silver: "15",
+		?: "2",
 	}
 ];
