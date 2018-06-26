@@ -51,6 +51,9 @@ const materials  = [
 		name: "uranium",
 		source: "mining"
 	}, {
+		name: "obsidian",
+		source: "mining"
+	},{
 		name: "uraniumRod",
 		source: "enrichment",
 		time: "600",
