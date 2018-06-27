@@ -1,4 +1,3 @@
 temp.html
 temp.js
-.vscode/settings.json
-.vscode/cSpell.json
+.vscode/**

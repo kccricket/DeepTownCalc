@@ -1,8 +1,7 @@
 let sortingMines = [];
 let needsList = [];
 let itemArray = [];
-let invArray = [];
-// let recursionCount = 0;
+let invArray = JSON.parse(JSON.parse(localStorage.getItem("invArray"))) || [];
 const noTime = ["mining", "shop", "waterCollection", "oilPumping"];
 
 //set up select options
@@ -86,7 +85,6 @@ function submitButton() {
     needsList = [];
     itemArray = [];
     invArray = [];
-    // recursionCount = 0;
 
     const what = document.getElementsByClassName("what");
     const howMany = document.getElementsByClassName("how-many");
@@ -127,6 +125,9 @@ function submitButton() {
             invArray.push(invItem);
         }
     }
+
+    let invJson = JSON.stringify(invArray);
+    localStorage.setItem("invArray", JSON.stringify(invJson));
 
     const matList = document.getElementsByClassName("mat");
     for (let i = 0; i < matList.length; i++) {
@@ -541,11 +542,11 @@ function toggleMines() {
     sortedDiv.classList.toggle("hidden");
 }
 
-// function showValue(newValue) {
-//     document.getElementById("coal").innerHTML=100 - newValue;
-//     document.getElementById("charcoal").innerHTML=newValue;
-//     submitButton();
-// }
+function showValue(newValue) {
+    document.getElementById("coal").innerHTML=100 - newValue;
+    document.getElementById("charcoal").innerHTML=newValue;
+    submitButton();
+}
 
 document.getElementById("show-all").addEventListener("click", showAll);
 
