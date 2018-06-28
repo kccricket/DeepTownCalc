@@ -1,6 +1,8 @@
 let sortingMines = [];
 let needsList = [];
 let itemArray = [];
+
+/** @type {Array} */
 let invArray = JSON.parse(JSON.parse(localStorage.getItem("invArray"))) || [];
 const noTime = ["mining", "shop", "waterCollection", "oilPumping"];
 
@@ -42,8 +44,11 @@ for (let i = 0; i < materials.length; i++) {
         document.getElementById("inventory").insertAdjacentHTML("beforeend", "<h3 class='hidden center'><span class='inv' data-source='" + materials[i].source + "' />" + materials[i].source + "</h3>");
     }
 
+    let invItem = invArray.find(item => item.name == materials[i].name);
+    let itemQuant = invItem ? invItem.quantity : 0;
+
     //build inventory div
-    const inv = '<li class="hidden"><label class="invLabel">' + materials[i].name + ' </label><input name="' + materials[i].name + '" type="number" min="0" class="inv" form="form" oninput="submitButton()"></li>';
+    const inv = '<li class="hidden"><label class="invLabel">' + materials[i].name + ' </label><input name="' + materials[i].name + '" type="number" min="0" class="inv" form="form" oninput="submitButton()" value="' + itemQuant + '"></li>';
     document.getElementById("inventory").insertAdjacentHTML("beforeend", inv);
 
     //materials list
