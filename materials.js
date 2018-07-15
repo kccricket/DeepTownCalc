@@ -812,5 +812,102 @@ const materials  = [
                 quantity: "10"
             }
         ]
+    }, {
+        name: "polishedObsidian",
+        source: "jewelCrafting",
+        time: "60",
+        toMake: [
+            {
+                thing: "obsidian",
+                quantity: "5"
+            }
+        ]
+    }, {
+        name: "obsidianKnife",
+        source: "jewelCrafting",
+        time: "120",
+        toMake: [
+            {
+                thing: "silverBar",
+                quantity: "1"
+            }, {
+                thing: "tree",
+                quantity: "2"
+            }, {
+                thing: "polishedObsidian",
+                quantity: "50"
+            }
+        ]
+    }, {
+        name: "compressor",
+        source: "crafting",
+        time: "180",
+        toMake: [
+            {
+                thing: "refinedOil",
+                quantity: "2"
+            }, {
+                thing: "rubber",
+                quantity: "1"
+            }, {
+                thing: "ironBar",
+                quantity: "5"
+            }
+        ]
+    }, {
+        name: "opticFiber",
+        source: "crafting",
+        time: "120",
+        batch: "10",
+        toMake: [
+            {
+                thing: "silicon",
+                quantity: "10"
+            }, {
+                thing: "oxygen",
+                quantity: "10"
+            }, {
+                thing: "plastic",
+                quantity: "1"
+            }
+        ]
+    }, {
+        name: "dryIce",
+        source: "crafting",
+        time: "120",
+        toMake: [
+            {
+                thing: "compressor",
+                quantity: "1"
+            }, {
+                thing: "greenLaser",
+                quantity: "10"
+            }, {
+                thing: "graphite",
+                quantity: "1000"
+            }
+        ]
+    }, {
+        name: "liquidNitrogen",
+        source: "chemistry",
+        time: "120",
+        batch: "4",
+        toMake: [
+            {
+                thing: "compressor",
+                quantity: "1"
+            }, {
+                thing: "aluminumBottle",
+                quantity: "1"
+            }, {
+                thing: "nitrogen",
+                quantity: "10"
+            }
+        ]
+    }, {
+        name: "nitrogen",
+        source: "chemicalMining",
+        time: "600",
+        batch: "5"
     }
 ];
