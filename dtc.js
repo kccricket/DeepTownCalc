@@ -161,7 +161,7 @@ function makeThese(stuff, quant) {
     }
 
     invArray.forEach(function (inventoryItem) {
-        if (stuff === inventoryItem.name && inventoryItem.quantity > 0) {
+        if (stuff === inventoryItem.name && inventoryItem.quantity > 0 && quant > 0) {
             let reduce = inventoryItem.quantity;
             inventoryItem.quantity -= quant;
             quant -= reduce;
