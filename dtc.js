@@ -161,7 +161,7 @@ function makeThese(stuff, quant) {
     }
 
     invArray.forEach(function (inventoryItem) {
-        if (stuff === inventoryItem.name && inventoryItem.quantity > 0 && quant > 0) {
+        if (stuff === inventoryItem.name && inventoryItem.quantity > 0) {
             let reduce = inventoryItem.quantity;
             inventoryItem.quantity -= quant;
             quant -= reduce;
@@ -219,7 +219,7 @@ function makeThese(stuff, quant) {
     if (material.hasOwnProperty("toMake")) {
         material.toMake.forEach(function (e) {
             q = material.batches * e.quantity;
-            makeThese(e.thing, q);
+            if (q > 0 ) {makeThese(e.thing, q);}
         });
     }
 }
