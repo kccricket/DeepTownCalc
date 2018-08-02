@@ -1,4 +1,4 @@
-/* scraped from deeptownguide.com */
+/* exported mines */
 const mines = [
     {
         area: "1",

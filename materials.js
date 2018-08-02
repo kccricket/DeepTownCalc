@@ -1,3 +1,4 @@
+/* exported materials */
 const materials  = [
     {
         name: "coal",
