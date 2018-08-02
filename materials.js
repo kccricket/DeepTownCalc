@@ -54,7 +54,10 @@ const materials  = [
     }, {
         name: "obsidian",
         source: "mining"
-    },{
+    }, {
+        name: "helium",
+        source: "mining"
+    }, {
         name: "uraniumRod",
         source: "enrichment",
         time: "600",
@@ -268,7 +271,7 @@ const materials  = [
         source: "crafting",
         time: "20",
         batch: "10",
-        value: "10",
+        value: "7",
         toMake: [
             {
                 thing: "copperBar",
@@ -511,6 +514,12 @@ const materials  = [
         time: "600",
         batch: "5",
         value: "100"
+    }, {
+        name: "nitrogen",
+        source: "chemicalMining",
+        time: "600",
+        batch: "3",
+        value: "300"
     }, {
         name: "oil",
         source: "oilPumping",
@@ -816,6 +825,7 @@ const materials  = [
         name: "polishedObsidian",
         source: "jewelCrafting",
         time: "60",
+        value: "280",
         toMake: [
             {
                 thing: "obsidian",
@@ -840,64 +850,35 @@ const materials  = [
         ]
     }, {
         name: "compressor",
-        source: "crafting",
+        source:"crafting",
         time: "180",
+        value: "44000",
         toMake: [
             {
                 thing: "refinedOil",
                 quantity: "2"
-            }, {
+            },
+            {
                 thing: "rubber",
                 quantity: "1"
-            }, {
+            },
+            {
                 thing: "ironBar",
                 quantity: "5"
-            }
-        ]
-    }, {
-        name: "opticFiber",
-        source: "crafting",
-        time: "120",
-        batch: "10",
-        toMake: [
-            {
-                thing: "silicon",
-                quantity: "10"
-            }, {
-                thing: "oxygen",
-                quantity: "10"
-            }, {
-                thing: "plastic",
-                quantity: "1"
-            }
-        ]
-    }, {
-        name: "dryIce",
-        source: "crafting",
-        time: "120",
-        toMake: [
-            {
-                thing: "compressor",
-                quantity: "1"
-            }, {
-                thing: "greenLaser",
-                quantity: "10"
-            }, {
-                thing: "graphite",
-                quantity: "1000"
             }
         ]
     }, {
         name: "liquidNitrogen",
         source: "chemistry",
         time: "120",
+        value: "12500",
         batch: "4",
         toMake: [
             {
-                thing: "compressor",
+                thing: "aluminumBottle",
                 quantity: "1"
             }, {
-                thing: "aluminumBottle",
+                thing: "compressor",
                 quantity: "1"
             }, {
                 thing: "nitrogen",
@@ -905,9 +886,476 @@ const materials  = [
             }
         ]
     }, {
-        name: "nitrogen",
-        source: "chemicalMining",
-        time: "600",
-        batch: "5"
-    }
+        name: "enhancedHelium",
+        source: "chemistry",
+        time: "1800",
+        value: "190000",
+        toMake: [
+            {
+                thing: "aluminumBottle",
+                quantity: "1"
+            }, {
+                thing: "compressor",
+                quantity: "1"
+            }, {
+                thing: "helium",
+                quantity: "100"
+            }
+        ]
+    }, {
+        name: "magniteOre",
+        source: "chemistry",
+        time: "360",
+        value: "12500",
+        toMake: [
+            {
+                thing: "oxygen",
+                quantity: "5"
+            }, {
+                thing: "ironBar",
+                quantity: "10"
+            }, {
+                thing: "greenLaser",
+                quantity: "5"
+            }
+        ]
+    }, {
+        name: "magniteBar",
+        source: "smelting",
+        time: "60",
+        value: "13700",
+        toMake: [
+            {
+                thing: "magniteOre",
+                quantity: "5"
+            }
+        ]
+    }, {
+        name: "toxicBomb",
+        source: "chemistry",
+        time: "120",
+        value: "77500",
+        batch: "10",
+        toMake: [
+            {
+                thing: "sulfuricAcid",
+                quantity: "10"
+            }
+        ]
+    }, {
+        name: "opticFiber",
+        source: "crafting",
+        time: "120",
+        batch: "10",
+        value: "10500",
+        toMake: [
+            {
+                thing: "plastic",
+                quantity: "1"
+            }, {
+                thing: "oxygen",
+                quantity: "10",
+            }, {
+                thing: "silicon",
+                quantity: "10"
+            }
+        ]
+    }, {
+        name: "dryIce",
+        source: "crafting",
+        time: "120",
+        value: "140000",
+        toMake: [
+            {
+                thing: "graphite",
+                quantity: "1000"
+            }, {
+                thing: "compressor",
+                quantity: "1"
+            }, {
+                thing: "greenLaser",
+                quantity: "10"
+            }
+        ]
+    }, {
+        name: "magnet",
+        source: "crafting",
+        time: "120",
+        value: "300000",
+        toMake: [
+            {
+                thing:"magniteBar",
+                quantity: "1"
+            }
+        ]
+    }, {
+        name: "electricalEngine",
+        source: "crafting",
+        time: "300",
+        value: "745000",
+        toMake: [
+            {
+                thing: "insulatedWire",
+                quantity: "50"
+            }, {
+                thing: "magnet",
+                quantity: "1"
+            }, {
+                thing: "aluminumBar",
+                quantity: "20"
+            }
+        ]
+    }, {
+        name: "rocketPartFuelTech",
+        source: "rocketParts",
+        toMake: [
+            {
+                thing: "compressor",
+                quantity: "30"
+            }, {
+                thing: "gunpowder",
+                quantity: "2000"
+            }, {
+                thing: "titaniumBar",
+                quantity: "210"
+            }
+        ]
+    }, {
+        name: "rocketPartFuelTank",
+        source: "rocketParts",
+        toMake: [
+            {
+                thing: "enhancedHelium",
+                quantity: "380"
+            },  {
+                thing: "uraniumRod",
+                quantity: "95"
+            },  {
+                thing: "solidPropellant",
+                quantity: "20"
+            }
+        ]
+    }, {
+        name: "rocketPartEngineSide",
+        source: "rocketParts",
+        time: "3600",
+        toMake: [
+            {
+                thing: "aluminumBar",
+                quantity: "3120"
+            },  {
+                thing: "diamondCutter",
+                quantity: "310"
+            },  {
+                thing: "rubber",
+                quantity: "25"
+            }
+        ]
+    }, {
+        name: "rocketPartNozzleSide",
+        source: "rocketParts",
+        time: "3600",
+        toMake: [
+            {
+                thing: "graphite",
+                quantity: "15100"
+            },  {
+                thing: "aluminumBar",
+                quantity: "6250"
+            },  {
+                thing: "titaniumBar",
+                quantity: "25"
+            }
+        ]
+    }, {
+        name: "rocketPartNozzleMain",
+        source: "rocketParts",
+        time: "3600",
+        toMake: [
+            {
+                thing: "graphite",
+                quantity: "15250"
+            },  {
+                thing: "aluminumBar",
+                quantity: "6450"
+            },  {
+                thing: "titaniumBar",
+                quantity: "20"
+            }
+        ]
+    }, {
+        name: "rocketPartBody",
+        source: "rocketParts",
+        time: "10800",
+        toMake: [
+            {
+                thing: "aluminumBar",
+                quantity: "1250"
+            },  {
+                thing: "diamondCutter",
+                quantity: "225"
+            },  {
+                thing: "rubber",
+                quantity: "45"
+            }
+        ]
+    }, {
+        name: "rocketPartWingletStage1",
+        source: "rocketParts",
+        time: "3600",
+        toMake: [
+            {
+                thing: "aluminumBar",
+                quantity: "8888"
+            },  {
+                thing: "steelPlate",
+                quantity: "1111"
+            },  {
+                thing: "gear",
+                quantity: "100"
+            }
+        ]
+    }, {
+        name: "rocketPartWingletStage2",
+        source: "rocketParts",
+        time: "3600",
+        toMake: [
+            {
+                thing: "aluminumBar",
+                quantity: "6250"
+            },  {
+                thing: "steelPlate",
+                quantity: "777"
+            },  {
+                thing: "gear",
+                quantity: "85"
+            }
+        ]
+    }, {
+        name: "rocketPartDecoupler",
+        source: "rocketParts",
+        time: "3600",
+        toMake: [
+            {
+                thing: "copperNail",
+                quantity: "33350"
+            },  {
+                thing: "steelPlate",
+                quantity: "777"
+            },  {
+                thing: "rubber",
+                quantity: "25"
+            }
+        ]
+    }, {
+        name: "rocketPartEngineMain",
+        source: "rocketParts",
+        time: "3600",
+        toMake: [
+            {
+                thing: "ironBar",
+                quantity: "22250"
+            },  {
+                thing: "wire",
+                quantity: "10000"
+            },  {
+                thing: "rubber",
+                quantity: "90"
+            }
+        ]
+    }, {
+        name: "rocketPartElectronicComp",
+        source: "rocketParts",
+        time: "10800",
+        toMake: [
+            {
+                thing: "solarPanel",
+                quantity: "65"
+            },  {
+                thing: "accumulator",
+                quantity: "2555"
+            }
+        ]
+    }, {
+        name: "rocketPartNode",
+        source: "rocketParts",
+        time: "3600",
+        toMake: [
+            {
+                thing: "lamp",
+                quantity: "1900"
+            },  {
+                thing: "glass",
+                quantity: "1600"
+            },  {
+                thing: "copperBar",
+                quantity: "9555"
+            }
+        ]
+    }, {
+        name: "rocketPartNodeQuest",
+        source: "rocketParts",
+        toMake: [
+            {
+                thing: "insulatedWire",
+                quantity: "390"
+            },  {
+                thing: "battery",
+                quantity: "645"
+            },  {
+                thing: "circuit",
+                quantity: "425"
+            },  {
+                thing: "motherboard",
+                quantity: "45"
+            },  {
+                thing: "opticFiber",
+                quantity: "645"
+            }
+        ]
+    }, {
+        name: "rocketPartSASModule",
+        source: "rocketParts",
+        time: "3600",
+        toMake: [
+            {
+                thing: "silverBar",
+                quantity: "1600"
+            },  {
+                thing: "glass",
+                quantity: "1600"
+            },  {
+                thing: "greenLaser",
+                quantity: "7550"
+            }
+        ]
+    }, {
+        name: "rocketPartMainCapsule",
+        source: "rocketParts",
+        time: "3600",
+        toMake: [
+            {
+                thing: "aluminumBar",
+                quantity: "1250"
+            },  {
+                thing: "diamondCutter",
+                quantity: "225"
+            },  {
+                thing: "rubber",
+                quantity: "45"
+            }
+        ]
+    }, {
+        name: "rocketPartLES",
+        source: "rocketParts",
+        time: "3600",
+        toMake: [
+            {
+                thing: "aluminumBar",
+                quantity: "3200"
+            },  {
+                thing: "steelBar",
+                quantity: "1060"
+            }
+        ]
+    }, {
+        name: "rocketStageAll",
+        source: "rocketQuest",
+        toMake: [
+            {
+                thing: "rocketStage1",
+                quantity: "1"
+            }, {
+                thing: "rocketStage2",
+                quantity: "1"
+            }, {
+                thing: "rocketStage3",
+                quantity: "1"
+            }
+        ]
+    }, {
+        name: "rocketStage1",
+        source: "rocketQuest",
+        toMake: [
+            {
+                thing: "rocketPartBody",
+                quantity: "1"
+            }, {
+                thing: "rocketPartFuelTech",
+                quantity: "1"
+            }, {
+                thing: "rocketPartFuelTank",
+                quantity: "1"
+            }, {
+                thing: "rocketPartEngineSide",
+                quantity: "3"
+            }, {
+                thing: "rocketPartNozzleSide",
+                quantity: "3"
+            }, {
+                thing: "rocketPartDecoupler",
+                quantity: "1"
+            }, {
+                thing: "rocketPartWingletStage1",
+                quantity: "1"
+            }
+        ]
+    }, {
+        name: "rocketStage2",
+        source: "rocketQuest",
+        toMake: [
+            {
+                thing: "rocketPartBody",
+                quantity: "1"
+            }, {
+                thing: "rocketPartFuelTech",
+                quantity: "1"
+            }, {
+                thing: "rocketPartFuelTank",
+                quantity: "1"
+            }, {
+                thing: "rocketPartNozzleMain",
+                quantity: "1"
+            }, {
+                thing: "rocketPartDecoupler",
+                quantity: "1"
+            }, {
+                thing: "rocketPartWingletStage2",
+                quantity: "1"
+            }
+        ]
+    }, {
+        name: "rocketStage3",
+        source: "rocketQuest",
+        toMake: [
+            {
+                thing: "rocketPartBody",
+                quantity: "1"
+            }, {
+                thing: "rocketPartEngineMain",
+                quantity: "1"
+            }, {
+                thing: "rocketPartElectronicComp",
+                quantity: "1"
+            }, {
+                thing: "rocketPartDecoupler",
+                quantity: "1"
+            }, {
+                thing: "rocketPartNode",
+                quantity: "1"
+            }, {
+                thing: "rocketPartNodeQuest",
+                quantity: "1"
+            }, {
+                thing: "rocketPartSASModule",
+                quantity: "1"
+            }, {
+                thing: "rocketPartMainCapsule",
+                quantity: "1"
+            }, {
+                thing: "rocketPartLES",
+                quantity: "1"
+            }
+        ]
+    },
 ];

@@ -165,7 +165,7 @@ function makeThese(stuff, quant) {
             let reduce = inventoryItem.quantity;
             inventoryItem.quantity -= quant;
             quant -= reduce;
-            (quant < 0) ? 0: quant;
+            quant = (quant < 0) ? 0: quant;
         }
     });
 
@@ -203,6 +203,7 @@ function makeThese(stuff, quant) {
             for (let i = needsList.length - 1; i >= 0; i--) {
                 if (needsList[i].name === material.name) {
                     needsList[i].quantity = parseInt(needsList[i].quantity) + parseInt(quant);
+                    needsList[i].batches = parseInt(needsList[i].batches) + parseInt(material.batches);
                     break;
                 } else {
                     matchCounter++;
@@ -219,7 +220,7 @@ function makeThese(stuff, quant) {
     if (material.hasOwnProperty("toMake")) {
         material.toMake.forEach(function (e) {
             q = material.batches * e.quantity;
-            makeThese(e.thing, q);
+            if (q > 0 ) {makeThese(e.thing, q);}
         });
     }
 }
@@ -397,7 +398,7 @@ function displayMines(sortedMines) {
 
         resultDiv.innerHTML = "<p>Click to sort mines by area</p>";
         sortedMines.forEach(function (e) {
-            content = "<li>Area&nbsp;<span class='area-priority'>" + e.area + "</span></li>";
+            content = "<li><span class='tooltip'><span class='tooltiptext'>" + getTooltipText(e) + "</span>Area&nbsp;<span class='area-priority'>" + e.area + "</span></span></li>";
             resultDiv.insertAdjacentHTML("beforeend", content);
         });
 
@@ -408,11 +409,30 @@ function displayMines(sortedMines) {
         });
 
         sortedMines.forEach(function (e) {
-            content = "<li>&nbsp;<span class='area-area'>" + e.area + "</span></li>";
+            content = "<li><span class='tooltip'><span class='tooltiptext'>" + getTooltipText(e) + "</span>&nbsp;<span class='area-area'>" + e.area + "</span></span></li>";
             sortedDiv.insertAdjacentHTML("beforeend", content);
         });
     }
     displayNeeds();
+}
+
+function getTooltipText(area) {
+    const propertiesToDiscard = ["area", "howMuch", "order"];
+    let keys = Object.keys(area);
+    let values = Object.values(area);
+    let keysToKeep = [];
+    let valuesToKeep = [];
+    let stringReturn = "<pre>";
+    let stringLength = 0;
+    for (let i = 0; i < keys.length; i++) {
+        if (! propertiesToDiscard.includes(keys[i])) {
+            if (keys[i].length > stringLength) {stringLength = keys[i].length;}
+            keysToKeep.push(keys[i]);
+            valuesToKeep.push(values[i]);}}
+    for (let i = 0; i < keysToKeep.length; i++) {
+        stringReturn += '\xa0' + keysToKeep[i] + "\xa0".repeat(stringLength - keysToKeep[i].length) + ':' + "\xa0".repeat(6 - valuesToKeep[i].length) + valuesToKeep[i] + '\xa0 \n'
+    }
+    return stringReturn + '</pre>'
 }
 
 function displayNeeds() {
