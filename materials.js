@@ -1357,7 +1357,5 @@ const materials  = [
                 quantity: "1"
             }
         ]
-    }, {
-        name: ""
-    }
+    },
 ];
