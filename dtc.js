@@ -203,7 +203,7 @@ function makeThese(stuff, quant) {
             for (let i = needsList.length - 1; i >= 0; i--) {
                 if (needsList[i].name === material.name) {
                     needsList[i].quantity = parseInt(needsList[i].quantity) + parseInt(quant);
-                    needsList[i].batches = parseInt(needsList[i].batches) + parsInt(material.batches);
+                    needsList[i].batches = parseInt(needsList[i].batches) + parseInt(material.batches);
                     break;
                 } else {
                     matchCounter++;
